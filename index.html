@@ -46,7 +46,7 @@
             mx = event.clientX;
             my = event.clientY;
 
-            console.log(x)
+            
             //var coor = "X coors:" + x + ",Y coords:" + y;
             //document.getelementById("demo").innerHTML = coor;
 
@@ -87,14 +87,16 @@
                 // var ctx = c.getContext("2d");
                // ctx.fillStyle = "red";
                ctx.beginPath();
-                ctx.moveTo(mx, my);
-                ctx.lineTo(x, y);
+                ctx.moveTo(mx, y);
+                ctx.lineTo(x, my);
                 ctx.stroke();
+                
 
 
 
                 //ctx.lineTo(y, x);
                 ctx.lineWidth = Math.random()*10;
+                ctx.globalCompositeOperation = "xor";
 
                 
 
