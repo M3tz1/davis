@@ -16,6 +16,7 @@
         #myCanvas {
             background-color: green;
             dispay: block;
+            border: solid red 1px;
         }
     </style>
 
@@ -96,10 +97,14 @@
 
                 //ctx.lineTo(y, x);
                 ctx.lineWidth = Math.random()*10;
-                ctx.globalCompositeOperation = "xor";
+                //ctx.globalCompositeOperation = "xor";
                 //ctx.setLineDash([4, 10]);
 
-                ctx.drawImage(canvas, 0 + mx, 0 + my, ww/2,wh/2);
+                ctx.drawImage(canvas, 0 , 0 + my, ww/2,wh/2);
+                ctx.drawImage(canvas, ww/2 , 0 + my, ww/2,wh/2);
+
+                ctx.drawImage(canvas, mx , 0 , ww/2,wh/2);
+                ctx.drawImage(canvas, mx + wh/2 , 0 + my, ww/2,wh/2);
 
                 
 
