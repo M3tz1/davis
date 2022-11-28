@@ -50,7 +50,8 @@ var randomColor2 = Math.floor(Math.random(0,255)*255);
 var randomColor3 = Math.floor(Math.random(0,255)*255);
 
        //var c = document.getElementById("myCanvas");
-       object.onclick = function(){ canvas.style.backgroundColor = "rgb("+ randomColor1 +","+randomColor1+","+randomColor2+")";};
+       function colorChange (){ canvas.style.backgroundColor = "rgb("+ randomColor1 +","+randomColor1+","+randomColor2+")";};
+       canvas.addEventListener("click", colorChange);
        // var ctx = c.getContext("2d");
         ctx.fillStyle = "red";
         ctx.moveTo(0, 0);
