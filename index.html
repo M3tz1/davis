@@ -37,12 +37,18 @@
             canvas.style.height = `${rect.height}px`
         }
 
+        var mx
+        var my
+
+        document.getElementById("myCanvas").onmousemove = function(bild) {showCords(event)};
 
         function showCords(event) {
-            x = event.clientX;
-            y = event.clientY;
-            var coor = "X coors:" + x + ",Y coords:" + y;
-            document.getelementById("demo").innerHTML = coor;
+            mx = event.clientX;
+            my = event.clientY;
+
+            console.log(x)
+            //var coor = "X coors:" + x + ",Y coords:" + y;
+            //document.getelementById("demo").innerHTML = coor;
 
 
         }
@@ -72,18 +78,30 @@
 
                 //var c = document.getElementById("myCanvas");
                 function colorChange() {
-                    canvas.style.backgroundColor = "rgb(" + randomColor1 + "," + randomColor1 + "," + randomColor2 + ")"; ctx.strokeStyle = "rgb(" + randomColor2 + "," + randomColor1 + "," + randomColor2 + ")";
+                    canvas.style.backgroundColor = "rgb(" + randomColor1 + "," + randomColor1 + "," + randomColor2 + ")"; 
+                    ctx.strokeStyle = "rgb(" + randomColor2 + "," + randomColor1 + "," + randomColor2 + ")";
+                    //canvas.style.transofrm = "rotate(90deg)";
+                    
                 };
                 canvas.addEventListener("click", colorChange)
                 // var ctx = c.getContext("2d");
-                ctx.fillStyle = "red";
+               // ctx.fillStyle = "red";
+               ctx.beginPath();
                 ctx.moveTo(y, x);
                 ctx.lineTo(x, y);
-                //ctx.lineTo(y, x);
                 ctx.stroke();
+
+
+
+                //ctx.lineTo(y, x);
+                ctx.lineWidth = Math.random()*10;
+
+                
+
                 window.requestAnimationFrame(bild)
             }, 1000 / framesPerSecond)
 
+           // ctx.rotate(45*Math.PI / 100)
 
 
 
