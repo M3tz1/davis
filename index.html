@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        body{
+            padding:0px;
+            margin: 0px;
+        }
+        #myCanvas{
+            background-color: green;
+            dispay: block;
+        }
+    </style>
+
+</head>
+<body>
+
+    <canvas id="myCanvas">
+        Your browser does not support the HTML canvas tag.</canvas>
+
+    <script>
+
+        function showCords(event){
+            var x = event.clientX;
+            var y = event.clientY;
+            var coor = "X coors:"+x+",Y coords:" + y;
+            document.getelementById("demo").innerHTML = coor;
+
+            
+        }
+
+       // object.addEventListener("mousemove", showCords);
+
+
+const ww = window.innerWidth
+const wh = window.innerHeight
+
+const canvas = document.querySelector('#myCanvas');
+canvas.width = ww
+canvas.height = wh
+const ctx = canvas.getContext('2d')
+
+var randomColor1 = Math.floor(Math.random(0,255)*255);
+var randomColor2 = Math.floor(Math.random(0,255)*255);
+var randomColor3 = Math.floor(Math.random(0,255)*255);
+
+       //var c = document.getElementById("myCanvas");
+       object.onclick = function(){ canvas.style.backgroundColor = "rgb("+ randomColor1 +","+randomColor1+","+randomColor2+")";};
+       // var ctx = c.getContext("2d");
+        ctx.fillStyle = "red";
+        ctx.moveTo(0, 0);
+        ctx.lineTo(200, wh);
+        ctx.stroke();
+
+        console.log(Math.floor(randomColor*255))
+
+    </script>   
+    
+</body>
+</html>
+
+
