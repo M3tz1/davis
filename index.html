@@ -87,8 +87,8 @@
                 // var ctx = c.getContext("2d");
                // ctx.fillStyle = "red";
                ctx.beginPath();
-                ctx.moveTo(mx, mx);
-                ctx.lineTo(y, my);
+                ctx.moveTo(y, x);
+                ctx.lineTo(x, y);
                 ctx.stroke();
                 
 
@@ -99,7 +99,7 @@
                 ctx.globalCompositeOperation = "xor";
                 //ctx.setLineDash([4, 10]);
 
-                ctx.drawImage(canvas, 0 + mx, 0 + my);
+                ctx.drawImage(canvas, 0 + mx, 0 + my, ww/2,wh/2);
 
                 
 
